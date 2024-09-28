@@ -4,6 +4,8 @@ from link.models import Link, Product
 
 
 class LinkSerializer(serializers.ModelSerializer):
+    """Обработка модели Звена"""
+
     class Meta:
         model = Link
         fields = '__all__'
@@ -11,6 +13,8 @@ class LinkSerializer(serializers.ModelSerializer):
 
 
 class ProductSerializer(serializers.ModelSerializer):
+    """Обработка модели Продукт"""
+
     links = LinkSerializer(read_only=True)
 
     class Meta:

@@ -6,6 +6,8 @@ NULLABLE = {"blank": True, "null": True}
 
 
 class Link(models.Model):
+    """Модель звена"""
+
     FACTORY = "factory"
     RETAIL = "retail"
     INDIVIDUAL_ENTREPRENEUR = "individual_entrepreneur"
@@ -40,6 +42,8 @@ class Link(models.Model):
 
 
 class Product(models.Model):
+    """Модель продукта"""
+
     name = models.CharField(max_length=100, verbose_name="Название")
     model = models.CharField(max_length=150, verbose_name="Модель")
     release = models.DateField(verbose_name="Дата выхода")

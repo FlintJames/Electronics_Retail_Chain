@@ -8,6 +8,8 @@ from users.permissions import IsActive
 
 
 class LinkViewSet(ModelViewSet):
+    """Класс представления Звена"""
+
     queryset = Link.objects.all
     serializer_class = LinkSerializer
     filter_backends = [DjangoFilterBackend]
@@ -16,30 +18,40 @@ class LinkViewSet(ModelViewSet):
 
 
 class ProductCreateAPIView(CreateAPIView):
+    """Класс представления на создание Продукта"""
+
     queryset = Product.objects.all
     serializer_class = ProductSerializer
-    permission_classes = (IsActive, )
+    permission_classes = (IsActive,)
 
 
 class ProductListAPIView(ListAPIView):
+    """Класс представления перечня Продукта"""
+
     queryset = Product.objects.all
     serializer_class = ProductSerializer
     permission_classes = (IsActive,)
 
 
 class ProductRetrieveAPIView(RetrieveAPIView):
+    """Класс представления единичного Продукта"""
+
     queryset = Product.objects.all
     serializer_class = ProductSerializer
     permission_classes = (IsActive,)
 
 
 class ProductUpdateAPIView(UpdateAPIView):
+    """Класс представления на редактирование Продукта"""
+
     queryset = Product.objects.all
     serializer_class = ProductSerializer
     permission_classes = (IsActive,)
 
 
 class ProductDestroyAPIView(DestroyAPIView):
+    """Класс представления на удаление Продукта"""
+
     queryset = Product.objects.all
     serializer_class = ProductSerializer
     permission_classes = (IsActive,)

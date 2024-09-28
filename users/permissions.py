@@ -3,6 +3,7 @@ from rest_framework.permissions import SAFE_METHODS
 
 
 class IsActive(permissions.BasePermission):
+    """Класс на определение правил доступа"""
 
     def has_permission(self, request, view):
         if request.user.is_authenticated and request.user.is_active:
